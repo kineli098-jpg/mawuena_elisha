@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>De General's Motors | Premium Car Rental & Sales</title>
+    <style>
+        /* Modern Reset & Google Fonts */
+      /*  @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap');*/
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            background-color: #0b0c10;
+            color: #f5f5f7;
+            overflow-x: hidden;
+        }
+
+        /* Navigation Bar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 8%;
+            background: rgb(17, 44, 44);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            color: #fff;
+            text-transform: uppercase;
+        }
+
+        .logo span.gold {
+            color: #d4af37; /* Luxury Gold */
+        }
+
+        .logo span.red {
+            color: #e11d48; /* Accent Red from logo */
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            display: block;
+            font-weight: 600;
+            margin-top: -2px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #a1a1aa;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #d4af37;
+        }
+
+        .btn-nav {
+            background: #d4af37;
+            color: #0b0c10;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+
+        .btn-nav:hover {
+            background: #f3cd44;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            background: linear-gradient(rgba(46, 38, 38, 0.85), rgba(11, 12, 16, 0.98)), 
+                        url('file:///C:Users/Us all/Desktop/group 18/1.png') no-repeat center center/cover;
+            margin-bottom: 60px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+            line-height: 1.2;
+        }
+
+        .hero h1 span {
+            color: #d4af37;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #a1a1aa;
+            max-width: 600px;
+            margin-bottom: 40px;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 20px;
+        }
+
+        .btn-primary {
+            background: #d4af37;
+            color: #0b0c10;
+            padding: 15px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background: #f3cd44;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #fff;
+            padding: 15px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            border-color: #e11d48; /* Red highlight on hover */
+            background: rgba(225, 29, 72, 0.05);
+            transform: translateY(-3px);
+        }
+
+        /* Services Section */
+        .section {
+            padding: 100px 8% 60px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .section-header h2 span {
+            color: #e11d48;
+        }
+
+        .section-header p {
+            color: #a1a1aa;
+            font-size: 1.1rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: #16181d;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            border-radius: 16px;
+            padding: 40px 30px;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(212, 175, 55, 0.3);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            color: #a1a1aa;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .card a {
+            color: #d4af37;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: color 0.2s ease;
+        }
+
+        .card a:hover {
+            color: #e11d48;
+        }
+
+        /* Feedback / Testimonials Section */
+        .testimonials {
+            background: #111217;
+            padding: 100px 8%;
+        }
+
+        .testimonial-card {
+            background: #16181d;
+            padding: 35px;
+            border-radius: 16px;
+            border-left: 4px solid #d4af37;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            color: #d4d4d8;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .client-name {
+            font-weight: 600;
+            color: #fff;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #71717a;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links, .btn-nav { display: none; }
+            .hero h1 { font-size: 2.5rem; }
+            .hero-btns { flex-direction: column; width: 100%; max-width: 300px; }
+            .btn-primary, .btn-secondary { text-align: center; }
+        }
+        
+/* Contact Form */
+.contact-form {
+    Max-width: 600px;
+    Margin: 30px auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+    Width: 100%;
+    Padding: 15px;
+    Margin-bottom: 15px;
+    Border: 1px solid #ccc;
+    Border-radius: 5px;
+}
+
+.contact-form button {
+    Background: #d7e05a;
+    Color: rgb(252, 251, 246);
+    Padding: 12px 25px;
+    Border: none;
+    Cursor: pointer;
+    Border-radius: 5px;
+}
+
+.contact-form button:hover {
+    Background: #f4b400;
+    Color: black;
+}
+
+.auth-box{
+    display: inline-flex;
+    border: 2px solid #ccc;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.auth-btn{
+    padding: 12px 25px;
+    text-decoration: none;
+    font-weight: bold;
+    color:#d7e05a;
+    background:white;
+    transition:0.3s;
+}
+.auth-btn.active{
+    background: #007bff;
+    color:white;
+}
+.auth-btn:hover{
+    backround:#0056b3;
+    color:white;
+}
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <nav>
+        <div class="logo">
+		<img src="C:\Users\Us all\Desktop\loggo.png" style="width:70px; height:70px; position:absolute; top:10px; left: 10px; border-radius:50%">
+           <span class="left:80px"> De General's <span class="red">Motors</span></span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#services">Home</a></li>
+            <li><a href="#reviews">Categories</a></li>
+             <li><a href="#about">About Us</a></li>
+              <li><a href="#bookings">Bookings</a></li>
+
+        </ul>
+        <a href="#" class="btn-nav">Browse Showroom</a>
+    </nav>
+    <div class=""auth-box">
+        <a href="login.html" class="auth-btn active">Login</a>
+        <a href="signup.html" class="auth-btn">Sign Up</a>
+    </div>
+
+    <!-- Hero Showcase Section -->
+    <header class="hero">
+        <h1>Drive with <span>Confidence</span>.</h1>
+        <p>Welcome to De General's Motors. Your premier destination for luxury car rentals, professional chauffeur hire, and certified vehicle sales.</p>
+        <div class="hero-btns">
+            <a href="#services" class="btn-primary">Our Services</a>
+            <a href="#" class="btn-secondary">View Inventory</a>
+        </div>
+        
+    </header>
+
+    <!-- Services Section -->
+    <section id="services" class="section">
+        <div class="section-header">
+            <h2>Our Core <span>Offerings</span></h2>
+            <p>Premium automotive services designed completely around your comfort and lifestyle.</p>
+        </div>
+        <div class="grid">
+            <!-- Service 1 -->
+            <div class="card">
+                <span class="card-icon">🚗</span>
+                <h3>Car Rentals</h3>
+                <p>Need a flexible, dependable ride? Choose from our range of meticulously maintained sedans and compact cars for daily or weekly use.</p>
+                <a href="#">Book a Rental &rarr;</a>
+            </div>
+            <!-- Service 2 -->
+            <div class="card">
+                <span class="card-icon">⭐</span>
+                <h3>Chauffeur & SUV Hire</h3>
+                <p>Arrive in style. Experience premium travel with our top-tier SUVs, driven by professional, well-trained personal drivers.</p>
+                <a href="#">Book Luxury Hire &rarr;</a>
+            </div>
+            <!-- Service 3 -->
+            <div class="card">
+                <span class="card-icon">🔑</span>
+                <h3>Car Sales</h3>
+                <p>Ready to buy? Explore our handpicked showroom of certified pre-owned and brand-new cars inspected to meet highest standards.</p>
+                <a href="#">Explore Showroom &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials / Feedback Section -->
+    <section id="reviews" class="testimonials">
+        <div class="section-header">
+            <h2>Client <span>Feedback</span></h2>
+            <p>What our community says about their experiences with us.</p>
+        </div>
+        <div class="grid">
+            <div class="testimonial-card">
+                <p class="testimonial-text">"Renting from De General's Motors was incredibly easy. The vehicle was clean, fuel-efficient, and the service was completely straightforward."</p>
+                <p class="client-name">— Emmanuel B.</p>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text">"Excellent executive car hiring service. The driver was highly professional and on time. I strongly recommend them for corporate needs."</p>
+                <p class="client-name">— Cynthia M.</p>
+            </div>
+        </div>
+    </section>
+ <form class="contact-form">
+            <input type="text" placeholder="Your Name" required>
+
+            <input type="email" placeholder="Your Email" required>
+
+            <textarea placeholder="Your Message"></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+    <!-- Footer -->
+    <footer>
+        &copy; 2026 De General's Motors. All rights reserved. Driven by quality.
+    </footer>
+
+</body>
+</html>
